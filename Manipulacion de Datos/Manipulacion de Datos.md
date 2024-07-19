@@ -24,6 +24,8 @@ Para los testers, las consultas de DML son herramientas indispensables por varia
 
 En esta sección, cada operación de DML será explicada en detalle, con ejemplos prácticos y escenarios de uso comunes:
 
+**[SELECT / ALIAS](#select/alias):** Veremos cómo consultar registros en tablas.
+
 **[INSERT](#insert):** Veremos cómo insertar registros en tablas con valores explícitos.
 
 **[UPDATE](#update):** Exploraremos cómo actualizar datos de manera selectiva, utilizando condiciones para asegurar que solo los registros deseados se vean afectados.
@@ -34,6 +36,58 @@ En esta sección, cada operación de DML será explicada en detalle, con ejemplo
 Cada subsección proporcionará ejemplos claros y contextualizados, utilizando la base de datos de ejemplo Northwind para ilustrar cómo se aplican estas operaciones en un entorno realista.
 
 Al final de esta sección, deberías sentirte cómodo realizando operaciones de DML, lo que te permitirá gestionar y manipular datos con confianza y precisión en tus tareas de testing. ¡Vamos a empezar!
+
+# SELECT / ALIAS
+
+La cláusula **SELECT** en SQL se utiliza para extraer datos de una o más tablas de una base de datos. Es la consulta más común y fundamental en SQL para:
+
+
+**1. Recuperación de Datos:** Permite a los usuarios obtener datos específicos de la base de datos según sus necesidades.
+
+**2. Análisis y Reportes:** Facilita el análisis de datos y la generación de reportes al extraer información precisa y relevante.
+
+**3. Manipulación de Datos:** Es esencial para manipular y visualizar datos en diversas formas, combinando, filtrando y ordenando la información.
+
+
+La cláusula SELECT se utiliza para especificar las columnas que deseas extraer de una tabla. Puedes seleccionar todas las columnas usando * o especificar columnas individuales.
+
+```sql
+SELECT columna1, columna2, ...
+FROM nombre_de_la_tabla;
+```
+
+Por su parte, la cláusula **ALIAS** se utiliza para renombrar temporalmente una columna o una tabla en el resultado de una consulta, proporcionando nombres más legibles o abreviados.
+
+**Sintaxis Básica para Columnas**
+
+```sql
+SELECT columna AS alias
+FROM nombre_de_la_tabla;
+```
+
+**Sintaxis Básica para Tablas**
+
+```sql
+SELECT columna1, columna2, ...
+FROM nombre_de_la_tabla AS alias;
+```
+
+## Ejemplo Práctico
+
+Para extraer nombres, la descripcion y el precio de los registros de la tabla Productos, renombrando las columnas, quedaria de la siguiente forma:
+
+```sql
+SELECT ProductName AS productos, Unit AS descripcion, Price AS precio
+FROM products;
+```
+
+Para seleccionar todas las columnas de los productos de la tabla, en vez usamos:
+
+
+```sql
+SELECT * FROM products;
+```
+
 
 # INSERT
 
